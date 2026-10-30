@@ -30,20 +30,23 @@ function Header({
         <label className="visually-hidden" htmlFor="language">
           {t("languageLabel")}
         </label>
-        <select
-          className="language-select"
-          id="language"
-          value={languagePreference}
-          onChange={(event) => onLanguageChange(event.target.value)}
-          aria-label={t("languageLabel")}
-        >
-          <option value="system">🌐 {t("languageSystem")}</option>
-          {SUPPORTED_LANGUAGES.map(({ code, flag, name }) => (
-            <option key={code} value={code}>
-              {flag} {name}
-            </option>
-          ))}
-        </select>
+        <span className="language-select-wrap">
+          <select
+            className="language-select"
+            id="language"
+            value={languagePreference}
+            onChange={(event) => onLanguageChange(event.target.value)}
+            aria-label={t("languageLabel")}
+          >
+            <option value="system">🌐 {t("languageSystem")}</option>
+            {SUPPORTED_LANGUAGES.map(({ code, flag, name }) => (
+              <option key={code} value={code}>
+                {flag} {name}
+              </option>
+            ))}
+          </select>
+          <span className="language-select-arrow" aria-hidden="true" />
+        </span>
         <div className="theme-control" role="group" aria-label={t("themeLabel")}>
           <button
             className="theme-option"
