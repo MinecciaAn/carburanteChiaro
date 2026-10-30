@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Avvia Carburante Chiaro (Vite)",
+			"type": "shell",
+			"command": "/bin/zsh",
+			"args": [
+				"-lc",
+				"export PATH=\"$HOME/.cache/carburante-chiaro/node-v22.12.0-darwin-arm64/bin:$PATH\"; npm run dev -- --host 127.0.0.1"
+			],
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		}
+	]
+}
